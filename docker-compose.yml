@@ -6,14 +6,9 @@ services:
     image: coinium_serv
     ports:
       - "5432:5432"
-    environment:
-      - POSTGRES_DB=jtx_db
-      - POSTGRES_USER=jtx_db_user
-      - POSTGRES_PASSWORD=dbpassword
     entrypoint: mono ./CoiniumServ-master/bin/Release/CoiniumServ.exe
 
-
-# Helpfull commands
-# docker-compose -f docker-compose.test.yml up -d
-# docker-compose logs ango
-# docker
+  mysql:
+    image: mysql:${MYSQL_VERSION}
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
