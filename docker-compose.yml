@@ -1,0 +1,19 @@
+version: '2'
+services:
+  coiniumserv:
+    container_name: coinserv
+    build: .
+    image: coinium_serv
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=jtx_db
+      - POSTGRES_USER=jtx_db_user
+      - POSTGRES_PASSWORD=dbpassword
+    entrypoint: mono ./CoiniumServ-master/bin/Release/CoiniumServ.exe
+
+
+# Helpfull commands
+# docker-compose -f docker-compose.test.yml up -d
+# docker-compose logs ango
+# docker
