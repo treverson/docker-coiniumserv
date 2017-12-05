@@ -10,4 +10,4 @@ RUN nuget restore -NoCache -DisableParallelProcessing $INSTALL_PATH/CoiniumServ-
 
 RUN xbuild $INSTALL_PATH/CoiniumServ-master/build/CoiniumServ.sln /p:Configuration="Release"
 
-#RUN mono contrib/xunit/xunit.console.clr4.x86.exe src/Tests/bin/Release/CoiniumServ.Tests.dll
+ENTRYPOINT ["mono", "./CoiniumServ-master/bin/Release/CoiniumServ.exe"]

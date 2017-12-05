@@ -6,7 +6,7 @@ services:
     image: coinium_serv
     ports:
       - "5432:5432"
-    entrypoint: mono ./CoiniumServ-master/bin/Release/CoiniumServ.exe
+#    entrypoint: mono ./CoiniumServ-master/bin/Release/CoiniumServ.exe
 
   mysql:
     image: mysql:${MYSQL_VERSION}
